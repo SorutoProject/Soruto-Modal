@@ -16,6 +16,8 @@
 [smodal.inIframe(options)](#smodaliniframeoptions)  
 
 #### smodal.alert(options)
+OKボタン付きのモーダルダイアログを表示します。
+
 例:
 
     smodal.alert({
@@ -56,6 +58,8 @@ OKボタンを押したときに実行するを文字列で指定します。
 囲い文字は必ず`'(シングルクオーテーション)`を使用してください。
 
 #### smodal.alert(options)
+OKボタンとキャンセルボタン付きのモーダルダイアログを表示します。
+
 例:
 
     smodal.alert({
@@ -96,6 +100,8 @@ OKボタンを押したときに実行するを文字列で指定します。
 囲い文字は必ず`'(シングルクオーテーション)`を使用してください。
 
 #### smodal.confirm(options)
+iframeを持つモーダルダイアログを表示します。
+
 例:
 
     smodal.confirm({
