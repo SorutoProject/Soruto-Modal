@@ -12,11 +12,19 @@ smodal.alert = function(options){
 	var str = options.message;
 	var bclick = options.backClose;
 	var f = options.okFunction;
+	var width = options.width;
+	var height = options.height;
 	smodal.sysclose();
 	var modal = document.createElement("div");
 	modal.innerHTML = t + '<hr>' + str + '<br><input type="button" class="smodal-modal-button" id="smodal-ok-button">';
 	var bg = document.createElement("div");
 	smodal.close();
+	if(width){
+			modal.style.width = width;
+	}
+	if(height){
+			modal.style.height = height;
+	}
 	modal.id= "smodal-modal";
 	bg.id = "smodal-modal-bg";
 	if(bclick === true){
@@ -43,11 +51,19 @@ smodal.confirm = function(options){
 	var bclick = options.backClose;
 	var yf = options.okFunction;
 	var nf = options.cancelFunction;
+	var width = options.width;
+	var height = options.height;
 	smodal.sysclose();
 	var modal = document.createElement("div");
 	modal.innerHTML = t + '<hr>' + str + '<br><input type="button" class="smodal-modal-button" id="smodal-ok-button"> <input type="button" class="smodal-modal-button" id="smodal-cancel-button">';
 	var bg = document.createElement("div");
 	smodal.close();
+	if(width){
+			modal.style.width = width;
+	}
+	if(height){
+			modal.style.height = height;
+	}
 	modal.id= "smodal-modal";
 	bg.id = "smodal-modal-bg";
 	if(bclick === true){
