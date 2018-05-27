@@ -6,7 +6,7 @@
 
 [smodal.alert(options)](#smodalalertoptions)  
 [smodal.confirm(options)](#smodalconfirmoptions)  
-[smodal.inIframe(options)](#smodalinIframeoptions)  
+[smodal.inIframe(options)](#smodaliniframeoptions)  
 
 #### smodal.alert(options)
 例:
