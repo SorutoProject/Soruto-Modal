@@ -21,24 +21,26 @@ OKボタン付きのモーダルダイアログを表示します。
 例:
 
     smodal.alert({
-    "title":"sample",
-    "message":"this is a sample text",
+    "title":"<b>sample</b>",
+    "message":"This is a sample text",
     "backClose":true,
     "width":"300px",
-    "height":"300px",
-    "okFunction":'alert()',
-    "okButtonValue":"了解"
+    "height":"150px",
+    "okFunction":'alert("OK")',
+    "okButtonValue":"Got it"
     });
 
 **オプション一覧** 
 
 **必須**  
 `"title":string`  
-モーダルのタイトルバーに表示する文字列を設定します。 
+モーダルのタイトルバーに表示する文字列を設定します。  
+なお、stringの設定にはHTMLを使用できます。
 
 **必須**  
 `"message":string`  
 モーダルに表示するメッセージとして表示する文字列を設定します。  
+なお、stringの設定にはHTMLを使用できます。
 
 `"backClose":boolean`  
 モーダルの背後にある半透明の部分をクリックしたときに、モーダルを閉じるか指定します。  
@@ -72,22 +74,24 @@ OKボタンとキャンセルボタンを持つモーダルダイアログを表
     "message":"Do you like apples?",
     "backClose":true,
     "width":"300px",
-    "height":"300px",
+    "height":"150px",
     "okFunction":'alert("OK")',
     "cancelFunction":'alert("Canceled")',
     "okButtonValue":"Yes",
-    "cancelButtonValue","No"
+    "cancelButtonValue":"No"
     });
 
 **オプション一覧** 
 
 **必須**  
 `"title":string`  
-モーダルのタイトルバーに表示する文字列を設定します。 
+モーダルのタイトルバーに表示する文字列を設定します。  
+なお、stringの設定にはHTMLを使用できます。  
 
 **必須**  
 `"message":string`  
-モーダルに表示するメッセージとして表示する文字列を設定します。  
+モーダルに表示するメッセージとして表示する文字列を設定します。   
+なお、stringの設定にはHTMLを使用できます。
 
 `"backClose":boolean`  
 モーダルの背後にある半透明の部分をクリックしたときに、モーダルを閉じるか指定します。  
