@@ -3,7 +3,7 @@ License:MIT
 Written by Soruto Proejct
 */
 /*Modal*/
-#single-modal{
+#smodal-modal{
   z-index: 101;
   position:absolute;
   top:0;
@@ -19,10 +19,10 @@ Written by Soruto Proejct
   overflow: auto;
   cursor: default;
 }
-.single-modal-opening{
+.smodal-modal-opening{
     animation: fadeIn 0.2s ease 0s 1 normal;
 }
-.single-modal-closing{
+.smodal-modal-closing{
     animation: fadeOut 2s ease 0s 1 normal forwards;
 }
 @keyframes fadeIn {
@@ -32,7 +32,7 @@ Written by Soruto Proejct
 @keyframes fadeOut {
   100% {top:-9000px;}
 }
-.single-modal-button{
+.smodal-modal-button{
   margin-top:10px;
   font-size:10pt;
   border:#5555aa 1px solid;
@@ -42,14 +42,14 @@ Written by Soruto Proejct
   border-radius: 5px;
   outline: none;
 }
-.single-modal-button:hover{
+.smodal-modal-button:hover{
   background: #4444aa;
 }
-.single-modal-button:focus{
+.smodal-modal-button:focus{
   border:#5555aa 2px solid;
   box-shadow:0px 0px 10px #5555aa;
 }
-#single-modal-bg{
+#smodal-modal-bg{
   z-index: 100;
   background:rgba(0,0,0,0.6);
   position: fixed;
@@ -57,4 +57,11 @@ Written by Soruto Proejct
   left:0;
   width:100%;
   height: 100%;
+}
+.smodal-iframe{
+  display: block;
+  position:absolute;
+  width:100%;
+  height:30px;
+  border:none;
 }

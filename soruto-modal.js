@@ -14,23 +14,25 @@ smodal.alert = function(options){
 	var f = options.okFunction;
 	smodal.sysclose();
 	var modal = document.createElement("div");
-	modal.innerHTML = t + '<hr>' + str + '<br><input type="button" class="single-modal-button" id="single-ok-button">';
+	modal.innerHTML = t + '<hr>' + str + '<br><input type="button" class="smodal-modal-button" id="smodal-ok-button">';
 	var bg = document.createElement("div");
 	smodal.close();
-	modal.id= "single-modal";
-	bg.id = "single-modal-bg";
+	modal.id= "smodal-modal";
+	bg.id = "smodal-modal-bg";
 	if(bclick === true){
 	bg.addEventListener('click', smodal.close, false);
 	}
 	document.body.appendChild(modal);
 	document.body.appendChild(bg);
-	modal.className="single-modal-opening";
-	var okb = document.getElementById("single-ok-button");
+	modal.className="smodal-modal-opening";
+	var okb = document.getElementById("smodal-ok-button");
 	okb.focus();
 	okb.value = singleOkButtonValue;
 	if(f){
 	okb.onclick = new Function("smodal.closeRun('" + f + "')");
-	document.getElementById("single-modal-bg").onclick = new Function("smodal.closeRun('" + f + "')");
+	 if(bclick === true){
+	document.getElementById("smodal-modal-bg").onclick = new Function("smodal.closeRun('" + f + "')");
+	}
 	}else{
 	okb.onclick = new Function("smodal.close()");
 	}
@@ -43,18 +45,18 @@ smodal.confirm = function(options){
 	var nf = options.cancelFunction;
 	smodal.sysclose();
 	var modal = document.createElement("div");
-	modal.innerHTML = t + '<hr>' + str + '<br><input type="button" class="single-modal-button" id="single-ok-button"> <input type="button" class="single-modal-button" id="single-cancel-button">';
+	modal.innerHTML = t + '<hr>' + str + '<br><input type="button" class="smodal-modal-button" id="smodal-ok-button"> <input type="button" class="smodal-modal-button" id="smodal-cancel-button">';
 	var bg = document.createElement("div");
 	smodal.close();
-	modal.id= "single-modal";
-	bg.id = "single-modal-bg";
+	modal.id= "smodal-modal";
+	bg.id = "smodal-modal-bg";
 	if(bclick === true){
 	bg.addEventListener('click', smodal.close, false);
 	}
 	document.body.appendChild(modal);
 	document.body.appendChild(bg);
-	modal.className="single-modal-opening";
-	var okb = document.getElementById("single-ok-button");
+	modal.className="smodal-modal-opening";
+	var okb = document.getElementById("smodal-ok-button");
 	okb.focus();
 	okb.value = singleOkButtonValue;
 	if(yf){
@@ -62,7 +64,7 @@ smodal.confirm = function(options){
 	}else{
 	okb.onclick = new Function("smodal.close()");
 	}
-	var cancelb = document.getElementById("single-cancel-button");
+	var cancelb = document.getElementById("smodal-cancel-button");
 	cancelb.value = singleCancelButtonValue;
 	if(nf){
 	cancelb.onclick = new Function("smodal.closeRun('" + nf + "')");	
@@ -70,18 +72,43 @@ smodal.confirm = function(options){
 	cancelb.onclick = new Function("smodal.close()");
 	}
 }
+smodal.inIframe = function(options){
+    var t = options.title;
+	var str = options.message;
+	var bclick = options.backClose;
+	var url = options.url;
+	var width = options.width;
+	var height = options.height;
+	smodal.sysclose();
+	var modal = document.createElement("div");
+	modal.innerHTML = t + '<br>' + str + '<br><iframe src="' + url + '" class="smodal-iframe">';
+	var bg = document.createElement("div");
+	smodal.close();
+	if(width){
+			modal.style.width = width;
+	}
+	if(height){
+			modal.style.height = height;
+	}
+	modal.id= "smodal-modal";
+	bg.id = "smodal-modal-bg";
+	bg.addEventListener('click', smodal.close, false);
+	document.body.appendChild(modal);
+	document.body.appendChild(bg);
+	modal.className="smodal-modal-opening";
+}
 smodal.close = function(){
-	var modal = document.getElementById("single-modal");
-	var bg = document.getElementById("single-modal-bg");
+	var modal = document.getElementById("smodal-modal");
+	var bg = document.getElementById("smodal-modal-bg");
 	if(modal){
-	modal.className="single-modal-closing";
+	modal.className="smodal-modal-closing";
 	}if(bg){
 	document.body.removeChild(bg); 
 	}
 }
 smodal.sysclose = function(){
-	var modal = document.getElementById("single-modal");
-	var bg = document.getElementById("single-modal-bg");
+	var modal = document.getElementById("smodal-modal");
+	var bg = document.getElementById("smodal-modal-bg");
 	if(modal){
 	document.body.removeChild(modal);
 	}if(bg){
