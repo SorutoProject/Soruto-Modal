@@ -4,9 +4,9 @@
 
 ### リファレンス
 
-[smodal.alert(options](#smodal.alert(options))  
-[smodal.confirm(options)](#smodal.confirm(options))  
-[smodal.inIframe(options)](#smodal.inIframe(options))  
+[smodal.alert(options)](#smodalalertoptions)  
+[smodal.confirm(options)](#smodalconfirmoptions)  
+[smodal.inIframe(options)](#smodalinIframeoptions)  
 
 #### smodal.alert(options)
 例:
