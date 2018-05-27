@@ -1,7 +1,14 @@
 # Soruto Modal
 モーダルウィンドウを簡単に作成できるJavaScriptライブラリ。
 ### 使用方法
-
+    <html>
+    <head>
+    <!--CSSの読み込み忘れに注意-->
+    <link rel="stylesheet" href="soruto-modal-default.js">
+    <script src="soruto-modal.js"></script>
+    </head>
+    <body>…</body>
+    </html>
 ### リファレンス
 
 [smodal.alert(options)](#smodalalertoptions)  
@@ -16,7 +23,7 @@
     "message":"this is a sample text",
     "backClose":true,
     "width":"300px",
-    "height":"300px"
+    "height":"300px",
     "okFunction":'alert()'
     });
 
@@ -56,7 +63,7 @@ OKボタンを押したときに実行するを文字列で指定します。
     "message":"this is a sample text",
     "backClose":true,
     "width":"300px",
-    "height":"300px"
+    "height":"300px",
     "okFunction":'alert()'
     });
 
@@ -96,7 +103,7 @@ OKボタンを押したときに実行するを文字列で指定します。
     "message":"this is a sample text",
     "backClose":true,
     "width":"300px",
-    "height":"300px"
+    "height":"300px",
     "okFunction":'alert("OK")',
     "cancelFunction":'alert("Canceled")'
     });
@@ -183,3 +190,9 @@ OKボタンを押したときに実行するを文字列で指定します。
 
 なお、`smodal.confirm()` では `"backClose":true`が指定されていても、  
 関数が実行されることはありません。
+
+#### smodal.close()
+例:  
+`smodal.close();`
+
+表示されているモーダルを閉じます。
