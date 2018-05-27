@@ -121,6 +121,8 @@ OKボタンのテキストを設定します。
 このオプションが指定されていないときは、`"cancelButtonValue":"OK"`が指定されます。
 
 #### smodal.inIframe(options)
+iframeを持つモーダルダイアログを表示します。
+
 例:
 
     smodal.inIframe({
