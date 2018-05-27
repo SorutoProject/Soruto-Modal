@@ -14,6 +14,7 @@ smodal.alert = function(options){
 	var f = options.okFunction;
 	var width = options.width;
 	var height = options.height;
+	var okButton = options.okButtonValue;
 	smodal.sysclose();
 	var modal = document.createElement("div");
 	modal.innerHTML = t + '<hr>' + str + '<br><input type="button" class="smodal-modal-button" id="smodal-ok-button">';
@@ -35,7 +36,11 @@ smodal.alert = function(options){
 	modal.className="smodal-modal-opening";
 	var okb = document.getElementById("smodal-ok-button");
 	okb.focus();
-	okb.value = singleOkButtonValue;
+	if(okButton){
+		okb.value = okButton;
+	}else{
+		okb.value = singleOkButtonValue;
+    }
 	if(f){
 	okb.onclick = new Function("smodal.closeRun('" + f + "')");
 	 if(bclick === true){
@@ -53,6 +58,8 @@ smodal.confirm = function(options){
 	var nf = options.cancelFunction;
 	var width = options.width;
 	var height = options.height;
+	var okButton = options.okButtonValue;
+	var cancelButton = options.cancelButtonValue;
 	smodal.sysclose();
 	var modal = document.createElement("div");
 	modal.innerHTML = t + '<hr>' + str + '<br><input type="button" class="smodal-modal-button" id="smodal-ok-button"> <input type="button" class="smodal-modal-button" id="smodal-cancel-button">';
@@ -74,14 +81,22 @@ smodal.confirm = function(options){
 	modal.className="smodal-modal-opening";
 	var okb = document.getElementById("smodal-ok-button");
 	okb.focus();
+	if(okButton){
+	okb.value = okButton;
+	}else{
 	okb.value = singleOkButtonValue;
+	}
 	if(yf){
 	okb.onclick = new Function("smodal.closeRun('" + yf + "')");
 	}else{
 	okb.onclick = new Function("smodal.close()");
 	}
 	var cancelb = document.getElementById("smodal-cancel-button");
-	cancelb.value = singleCancelButtonValue;
+	if(cancelButton){
+		cancelb.value = cancelButton;
+	}else{
+		cancelb.value = singleCancelButtonValue;
+	}
 	if(nf){
 	cancelb.onclick = new Function("smodal.closeRun('" + nf + "')");	
 	}else{
