@@ -150,7 +150,7 @@ OKボタンを押したときに実行するを文字列で指定します。
 #### smodal.inIframe(options)
 例:
 
-    smodal.confirm({
+    smodal.inIframe({
     "title":"sample",
     "message":"this is a sample text",
     "url":"http://sorutopj.ml",
